@@ -1,27 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alexandra – Consultora</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-/* Layout: tarjeta digital en una columna, bloques desplegables y botones grandes de WhatsApp */
-:root{--bg1:#f6effc;--bg2:#ffffff;--card:#ffffff;--ink:#3b1f5c;--muted:#7a6590;--soft:#ebddf8;--acc:#8a52c8;--acc2:#b48ae6;--line:#e3d3f3;--shadow:0 8px 24px rgba(138,82,200,.14);--blob:#d9c2f2;--wa:#2aa763}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1b1026;--bg2:#241532;--card:#2d1b3d;--ink:#f3e9fc;--muted:#c3a9dc;--soft:#3d2753;--line:#4b3262;--shadow:0 8px 24px rgba(0,0,0,.35);--blob:#4b2d6b;color-scheme:dark}}
-:root[data-theme="dark"]{--bg1:#1b1026;--bg2:#241532;--card:#2d1b3d;--ink:#f3e9fc;--muted:#c3a9dc;--soft:#3d2753;--line:#4b3262;--shadow:0 8px 24px rgba(0,0,0,.35);--blob:#4b2d6b;color-scheme:dark}
+:root{--bg1:#f6effc;--bg2:#ffffff;--card:#ffffff;--ink:#3b1f5c;--muted:#7a6590;--soft:#ebddf8;--acc:#8a52c8;--acc2:#b48ae6;--line:#e3d3f3;--shadow:0 8px 24px rgba(138,82,200,.14);--blob:#d9c2f2;--wa:#2aa763;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1b1026;--bg2:#241532;--card:#2d1b3d;--ink:#f3e9fc;--muted:#c3a9dc;--soft:#3d2753;--line:#4b3262;--shadow:0 8px 24px rgba(0,0,0,.35);--blob:#4b2d6b}}
+:root[data-theme="dark"]{--bg1:#1b1026;--bg2:#241532;--card:#2d1b3d;--ink:#f3e9fc;--muted:#c3a9dc;--soft:#3d2753;--line:#4b3262;--shadow:0 8px 24px rgba(0,0,0,.35);--blob:#4b2d6b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background-color:var(--bg2);background-image:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--ink);font-family:"Nunito",system-ui,sans-serif;font-size:16px;line-height:1.5;position:relative;overflow-x:hidden}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--ink);font-family:"Nunito",system-ui,sans-serif;line-height:1.5;position:relative;overflow-x:hidden}
 .blob{position:fixed;border-radius:50%;background:var(--blob);filter:blur(60px);opacity:.7;z-index:0;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
 .b1{width:280px;height:280px;top:-60px;left:-80px}
 .b2{width:240px;height:240px;bottom:-40px;right:-70px;animation-delay:-6s}
 @keyframes drift{to{transform:translate(40px,30px) scale(1.15)}}
-main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding-block:18px 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:18px 16px 44px}
 .top{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:20px;padding:16px;margin-bottom:16px;box-shadow:var(--shadow);border:1px solid var(--line);animation:rise .7s ease-out both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}}
 .logo{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
-.top div:nth-child(2){min-width:0}
 .top b{display:block;font-size:1.15rem;font-weight:800}
 .top small{color:var(--muted);font-size:.9rem}
 .top a{margin-left:auto;background:var(--wa);color:#fff;text-decoration:none;font-weight:800;padding:10px 14px;border-radius:999px;font-size:.9rem}
@@ -32,7 +31,10 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"⌃";color:var(--acc);font-size:1.1rem;transition:transform .2s}
 details:not([open]) summary::after{transform:rotate(180deg)}
 .row{display:flex;gap:16px;flex-wrap:wrap;padding:0 0 18px}
-summary:focus-visible,.btn:focus-visible,.top a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.cover{width:120px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem;transition:transform .2s}
+.cover:hover,.cover:active{transform:translateY(-4px)}
+.cover span{display:grid;place-items:center;text-align:center;width:120px;height:160px;border-radius:12px;background:var(--c);color:#fff;font-weight:800;padding:6px;margin-bottom:6px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.cover:focus-visible,summary:focus-visible,.btn:focus-visible,.top a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 h2{font-size:1.1rem;font-weight:800;margin:26px 0 10px}
 ol{margin:0 0 22px;padding-left:1.3rem}
 li{margin-bottom:8px}
@@ -81,7 +83,7 @@ li::marker{color:var(--acc);font-weight:800}
 <div class="row"><a class="brand" style="--c:linear-gradient(135deg,#e8862a,#d6246e)" href="https://cartao-visita.natura.com/cl/11465744"><span>Natura y Avon<small>Toca para ver las revistas</small></span><i>›</i></a></div></details>
 
 <details open><summary>Revistas Ésika, L’Bel y Cyzone</summary>
-<div class="row"><a class="brand" style="--c:linear-gradient(135deg,#6b2c91,#e6007e)" href="https://catalogodigital.somosbelcorp.com/CL?consultant=MTIyMzc0OA=="><span>Ésika, L’Bel y Cyzone<small>Toca para ver las revistas</small></span><i>›</i></a></div></details>
+<div class="row"><a class="brand" style="--c:linear-gradient(135deg,#6b2c91,#e6007e)" href="https://catalogodigital.somosbelcorp.com/CL?consultant=MTIyMzc0OA==&next_campaign=true"><span>Ésika, L’Bel y Cyzone<small>Campaña 18 · Toca para ver las revistas</small></span><i>›</i></a></div></details>
 
 <details open class="hot"><summary>¿Es para regalar?</summary>
 <div class="row" style="display:block"><p class="p">Si lo quieres para regalo, avísame cuando hagas tu pedido. Te lo dejo listo para regalo, con tu mensaje en una tarjeta. Tiene un costo adicional, pregúntame por WhatsApp.</p><a class="btn main" style="margin-bottom:0" href="https://wa.me/56944511191?text=Hola%2C%20quiero%20mi%20pedido%20para%20regalo">Quiero mi pedido para regalo</a></div></details>
@@ -117,10 +119,7 @@ document.getElementById('share').addEventListener('click',async function(){
   try{
     if(navigator.share){await navigator.share({title:'Alexandra – Consultora',url:location.href});}
     else{await navigator.clipboard.writeText(location.href);b.textContent='Link copiado';}
-  }catch(e){
-    try{await navigator.clipboard.writeText(location.href);b.textContent='Link copiado';}
-    catch(e2){b.textContent='Copia el link desde la barra de direcciones';}
-  }
+  }catch(e){}
 });
 </script>
 </body>
